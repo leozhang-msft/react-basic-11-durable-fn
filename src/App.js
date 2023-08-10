@@ -13,10 +13,10 @@ function App() {
       console.log(statusQueryGetUri);
 
       const status = (await fetch(statusQueryGetUri));
-      const body = status.body
+      const body = await status.text();
       console.log(body);
 
-      setData(statusQueryGetUri);
+      setData(body);
     })();
   }, []);
 
