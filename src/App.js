@@ -18,6 +18,9 @@ function App() {
 
       // wait for the function to complete
       while(statusJson.runtimeStatus === "Running" || statusJson.runtimeStatus === "Pending") {
+        // sleep 1s
+        await new Promise(resolve => setTimeout(resolve, 1000));
+
         statusJson = await (await fetch(statusQueryGetUri)).json();
         console.log(statusJson);
       }
