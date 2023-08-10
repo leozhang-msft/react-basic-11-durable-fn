@@ -8,19 +8,19 @@ function App() {
       const API_PATH = '/api/orchestrators/HelloOrchestrator'
 
       let { statusQueryGetUri } = await( await fetch(API_PATH)).json();
-      // nevermind, this doesn't work, directs to the react app.
       statusQueryGetUri = "api" + statusQueryGetUri.substring(statusQueryGetUri.indexOf('/runtime/'));
       console.log(statusQueryGetUri);
 
-      let status = await (await fetch(statusQueryGetUri)).json();
-      console.log(status);
+      let statusJson = await (await fetch(statusQueryGetUri)).json();
+      console.log(statusJson);
 
-      while(status.runtimeStatus === "Running") {
-        status = await (await fetch(statusQueryGetUri)).json();
-        console.log(status);
+      while(statusJson.runtimeStatus === "Running") {
+        statusJson = await (await fetch(statusQueryGetUri)).json();
+        console.log(statusJson);
       }
 
-      setData(status);
+      console.log(typeof(statusJson.output))
+      setData(statusJson.output.join(', '));
     })();
   }, []);
 
