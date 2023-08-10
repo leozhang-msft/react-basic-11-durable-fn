@@ -12,11 +12,15 @@ function App() {
       statusQueryGetUri = "api" + statusQueryGetUri.substring(statusQueryGetUri.indexOf('/runtime/'));
       console.log(statusQueryGetUri);
 
-      const status = (await fetch(statusQueryGetUri));
-      const body = await status.text();
-      console.log(body);
+      let status = await (await fetch(statusQueryGetUri)).json();
+      console.log(status);
 
-      setData(body);
+      while(status.runtimeStatus === "Running") {
+        status = await (await fetch(statusQueryGetUri)).json();
+        console.log(status);
+      }
+
+      setData(status);
     })();
   }, []);
 
