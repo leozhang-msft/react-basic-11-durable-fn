@@ -8,7 +8,7 @@ function App() {
       const API_PATH = '/api/orchestrators/HelloOrchestrator'
 
       let { statusQueryGetUri } = await( await fetch(API_PATH)).json();
-      statusQueryGetUri = "api" + statusQueryGetUri.substring(statusQueryGetUri.indexOf('/runtime/'));
+      statusQueryGetUri = statusQueryGetUri.substring(statusQueryGetUri.indexOf('/runtime/'));
       console.log(statusQueryGetUri);
 
       let statusJson = await (await fetch(statusQueryGetUri)).json();
