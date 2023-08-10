@@ -14,7 +14,7 @@ function App() {
       let statusJson = await (await fetch(statusQueryGetUri)).json();
       console.log(statusJson);
 
-      while(statusJson.runtimeStatus === "Running") {
+      while(statusJson.runtimeStatus === "Running" || statusJson.runtimeStatus === "Pending") {
         statusJson = await (await fetch(statusQueryGetUri)).json();
         console.log(statusJson);
       }
