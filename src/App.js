@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 
-function App() {
+function Home() {
   const [data, setData] = useState('Loading msg from API...');
 
   useEffect(() => {
@@ -32,6 +33,26 @@ function App() {
   }, []);
 
   return <div>{data}</div>;
+}
+
+function About() {
+  return <div>About</div>;
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+
+      <div>
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+      </div>
+
+      <Route path="/" exact component={Home} />
+      <Route path="/about" component={About} />
+
+    </BrowserRouter>
+  )
 }
 
 export default App;
