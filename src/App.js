@@ -9,7 +9,7 @@ function App() {
 
       let { statusQueryGetUri } = await( await fetch(API_PATH)).json();
       // nevermind, this doesn't work, directs to the react app.
-      // statusQueryGetUri = statusQueryGetUri.replace('https://leozhang-js-durable-func-app.azurewebsites.net', '');
+      statusQueryGetUri = "api" + statusQueryGetUri.substring(statusQueryGetUri.indexOf('/runtime/'));
       console.log(statusQueryGetUri);
 
       const status = (await fetch(statusQueryGetUri));

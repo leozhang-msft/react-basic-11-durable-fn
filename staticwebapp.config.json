@@ -1,4 +1,11 @@
 {
+    "trailingSlash": "auto",
+    "routes": [
+        {
+            "route": "/api/runtime/",
+            "apiRewrite": "/runtime/"
+        }
+    ],
     "navigationFallback": {
         "rewrite": "/index.html"
     }
