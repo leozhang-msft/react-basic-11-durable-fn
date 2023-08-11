@@ -3,6 +3,7 @@
     "routes": [
         {
             "route": "/api/runtime/",
+            "redirect": "/thisshouldbreak/",
             "backendRewrite": "/runtime/"
         },
         {
