@@ -2,6 +2,10 @@
     "trailingSlash": "auto",
     "routes": [
         {
+            "route": "/api/runtime/",
+            "backendRewrite": "/runtime/"
+        },
+        {
             "route": "/runtime/",
             "backendRewrite": "/runtime/"
         }
