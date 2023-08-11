@@ -3,7 +3,7 @@
     "routes": [
         {
             "route": "/runtime/",
-            "apiRewrite": "/runtime/"
+            "backendRewrite": "/runtime/"
         }
     ],
     "navigationFallback": {
