@@ -5,10 +5,6 @@
             "route": "/api/runtime/",
             "redirect": "/thisshouldbreak/",
             "backendRewrite": "/runtime/"
-        },
-        {
-            "route": "/runtime/",
-            "backendRewrite": "/runtime/"
         }
     ],
     "navigationFallback": {
