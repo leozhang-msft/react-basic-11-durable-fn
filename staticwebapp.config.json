@@ -3,6 +3,8 @@
     "routes": [
         {
             "route": "/runtime/",
+            "rewrite": "/fail",
+            "redirect": "/fail2",
             "backendRewrite": "/runtime/"
         }
     ],
