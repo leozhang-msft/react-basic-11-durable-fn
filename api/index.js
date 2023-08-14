@@ -15,7 +15,7 @@ module.exports = df.orchestrator(function* (context) {
     const outputs = [];
 
     // Replace "Hello" with the name of your Durable Activity Function.
-    outputs.push(yield context.df.callActivity("Hello", "Tokyo Deez"));
+    outputs.push(yield context.df.callActivity("Hello", "Tokyo 7"));
     outputs.push(yield context.df.callActivity("Hello", "Seattle"));
     outputs.push(yield context.df.callActivity("Hello", "London"));
 

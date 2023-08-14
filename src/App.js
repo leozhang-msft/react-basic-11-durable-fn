@@ -33,6 +33,7 @@ function Home() {
 
       // display the output
       console.log(typeof statusJson.output);
+      console.log("HELLO");
       setData(statusJson.output.join(", "));
     })();
   }, []);
