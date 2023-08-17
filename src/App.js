@@ -6,7 +6,7 @@ function Home() {
 
   useEffect(() => {
     (async function () {
-      const API_PATH = "test/api/orchestrators/HelloOrchestrator";
+      const API_PATH = "api/orchestrators/HelloOrchestrator";
 
       // get the status query from the orchestrator
       let { statusQueryGetUri } = await (await fetch(API_PATH)).json();
